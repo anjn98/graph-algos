@@ -9,7 +9,12 @@
 
 <div align =center>
 
-
+{% if found == 0 and error == 0 and valid == 1 %}
+	<br><br><br><br><br><br><br><br>
+	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:380px; ">
+	No path found between {{ startp }} and {{ endp }} 
+	</button>
+{% endif %}
 
 
 {% if valid == 0 %}
@@ -33,13 +38,6 @@
 
 
 
-
-{% if found == 0 %}
-	<br><br><br><br><br><br><br><br>
-	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:380px; ">
-	No path found between {{ startp }} and {{ endp }} 
-	</button>
-{% endif %}
 
 
 	
