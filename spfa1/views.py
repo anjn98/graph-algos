@@ -81,6 +81,8 @@ def sp_output_view(request,*args,**kwargs):
 				id=id+1
 
 	if startp not in place_id or endp not in place_id:
+		context['error']=0
+		context['valid']=1
 		context['found']=0
 		return render(request,"sp_output.html",context)			
 		
