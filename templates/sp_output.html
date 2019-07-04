@@ -12,7 +12,7 @@
 
 
 {% if valid == 'False' %}
-	
+	<br><br><br><br>
 	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:280px; ">
 	Invalid Input 
 	</button>
@@ -20,9 +20,8 @@
 
 
 
-
-
-{% if error %}
+{% if error == 'True'%}
+	<br><br><br><br>
 	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:280px; ">
 		Invalid Input 
 	</button>
@@ -35,6 +34,7 @@
 
 
 {% if found == 'False' %}
+	<br><br><br><br>
 	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:380px; ">
 	No path found between {{ startp }} and {{ endp }} 
 	</button>
@@ -42,7 +42,7 @@
 
 
 	
-{% if found %}
+{% if found == 'True' %}		
 
 	<br><br><br><br>
 	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:420px; ">

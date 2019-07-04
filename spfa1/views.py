@@ -41,6 +41,7 @@ def sp_output_view(request,*args,**kwargs):
 
 	if len_inp%3 != 0 or startp=='' or endp=='' or len_inp=='':
 		context['valid']=False
+		context['valid']=True
 		return render(request,"sp_output.html",context)		
 
 	for i in range(len_inp):
