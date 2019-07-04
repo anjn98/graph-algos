@@ -30,6 +30,7 @@ def sp_output_view(request,*args,**kwargs):
 
 	if system==None or endp==None or startp==None:
 		context['error']=True
+		context['valid']=False
 		return render(request,"sp_output.html",context)		
 
 
