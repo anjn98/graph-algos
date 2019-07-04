@@ -11,9 +11,9 @@ def sp_input_view(request,*args,**kwargs):
 def sp_output_view(request,*args,**kwargs):
 
 	context={
-		"error" : 	False,
-		"valid" :	True,
-		"found"	: 	False,
+		"error" : 	0,
+		"valid" :	1,
+		"found"	: 	0,
 		"length":	100000,
 		"path"	:	[],
 		"start" : 	"Delhi",
@@ -29,8 +29,8 @@ def sp_output_view(request,*args,**kwargs):
 	
 
 	if system==None or endp==None or startp==None:
-		context['error']=True
-		context['valid']=False
+		context['error']=1
+		context['valid']=0
 		return render(request,"sp_output.html",context)		
 
 
@@ -39,9 +39,9 @@ def sp_output_view(request,*args,**kwargs):
 	len_inp=len(system)
 
 
-	if len_inp%3 != 0 or startp=='' or endp=='' or len_inp=='':
-		context['valid']=False
-		context['valid']=True
+	if len_inp%3 != 0 :
+		context['valid']=1
+		context['error']=1
 		return render(request,"sp_output.html",context)		
 
 	for i in range(len_inp):
@@ -68,7 +68,7 @@ def sp_output_view(request,*args,**kwargs):
 			if x.isdigit():
 				new_inp.append(int(x))
 			else:
-				context['valid']=False
+				context['valid']=0
 				return render(request,"sp_output.html",context)			
 		else:
 			if x in place_id :
@@ -81,7 +81,7 @@ def sp_output_view(request,*args,**kwargs):
 				id=id+1
 
 	if startp not in place_id or endp not in place_id:
-		context['found']="False"
+		context['found']=0
 		return render(request,"sp_output.html",context)			
 		
 
@@ -139,7 +139,7 @@ def sp_output_view(request,*args,**kwargs):
 			y += [id_place[x] ]
 			x = p[x]
 		y.reverse()
-		context["found"]=True
+		context["found"]=1
 		context["path"]=y
 		context["length"]=d[place_id[endp]]
 
