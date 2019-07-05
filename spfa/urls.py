@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from spfa1.views import sp_input_view,sp_output_view,home_view, projects_view, profiles_view, resume_view
+from spfa.views import sp_input_view,sp_output_view,home_view, projects_view, profiles_view, resume_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
