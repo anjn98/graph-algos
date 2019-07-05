@@ -145,3 +145,16 @@ def sp_output_view(request,*args,**kwargs):
 
 
 	return render(request,"djikstra/sp_output.html",context)
+
+
+
+
+
+
+
+
+
+	
+
+
+	

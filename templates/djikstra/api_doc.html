@@ -1,0 +1,74 @@
+{% extends 'navbar.html' %}	
+
+{% block content %}
+
+<style>
+div.ex1 {	
+  padding-left: 50px;
+  font-size: 15px;
+}
+</style>
+
+
+<div class='ex1'>
+<h1> GENERAL FORMAT </h1><hr>
+
+<textarea cols=100 rows=4>
+http://anjn98.pythonanywhere.com/djikstra/api?path=_______&start=________&end=_________
+</textarea>
+<br>
+<h2>'path'</h2>
+It should a string representing path. It should have have edge list representation where nodes can be either numerical or string(without spaces) and every 3rd word should be an intger representing the edge weight between previous two nodes
+<br><br>
+
+<h2>'start'</h2>
+It represnts the start point. It can be either numerical or string(without spaces)
+<br><br>
+
+<h2>'end'</h2>
+It represnts the end point. It can be either numerical or string(without spaces)
+<br><br>
+
+<br><br>
+
+
+
+
+
+<h1> OUTPUT </h1><hr>
+
+<h2>CASE 1: IF THERE IS SOME ERROR</h2>
+Ouput will have only one variable named <b>Error</b> which will be set to true<br>
+<textarea cols=100 rows=4>
+[{"Error": true}]
+</textarea>
+<br><br>
+
+
+<h2>CASE 2: IF THERE IS NO ERROR AND PATH NOT FOUND</h2>
+Ouput will have only two variable, <b>Error</b> which will be set to false and another <b>Found</b> also set to false<br>
+<textarea cols=100 rows=4>
+[{"Error": false, "Found": false}]
+</textarea>
+<br><br>
+
+<h2>CASE 3: IF THERE IS NO ERROR AND PATH FOUND</h2>
+<b>Error</b> set to false <b>Found</b> set to true.<br>
+There will be additional parameters<br>
+<b>Length</b>, the shortest path length<br>
+<b>Start</b> which has start point<br>
+<b>End</b> which has end point<br>
+<b>Path</b> a list which shows the shortest path<br>
+
+<br>
+<textarea cols=100 rows=4>
+[{"Error": false, "Found": true, "Length": 10, "Start": "A", "End": "B", "Path": ["A", "B"]}]
+</textarea>
+<br><br>
+
+
+</div> 
+
+
+
+{% endblock %}
