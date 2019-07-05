@@ -16,22 +16,22 @@ Including another URLconf
 
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
-from spfa.views import sp_input_view,sp_output_view,home_view, projects_view, profiles_view, resume_view
+from .views import home_view, projects_view, profiles_view, resume_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #list of tabs
     path('',home_view),
-
-
     path('projects/',projects_view),
     path('profiles/',profiles_view),
     path('resume/',resume_view),
 
-    path('sp_input/',sp_input_view),
+
+    #list of projects
+    path('djikstra/',include('djikstra.urls')),
 
 
-    
-    path('sp_output/',sp_output_view),
 ]

@@ -1,0 +1,78 @@
+
+{% extends 'navbar.html' %}
+
+{% block content %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+<div align =center>
+
+{% if not found  and not error and valid %}
+	<br><br><br><br><br><br><br><br>
+	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:380px; ">
+	No path found between {{ startp }} and {{ endp }} 
+	</button>
+{% endif %}
+
+
+{% if valid == 0 %}
+	<br><br><br><br><br><br><br><br>
+	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:280px; ">
+	Invalid Input 
+	</button>
+{% endif %}
+
+
+
+{% if error == 1 %}
+	<br><br><br><br><br><br><br><br>
+	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:280px; ">
+		Invalid Input
+	</button>
+{% endif %}
+
+
+
+
+
+
+
+
+	
+{% if found == 1 %}		
+
+	<br><br><br><br>
+	<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:420px; ">
+
+	<b>Length of shortest path between {{ startp }} and  {{ endp }} is {{ length }} </b>
+</button>
+	<br><br><br>
+
+	SHORTEST ROUTE IS <br> <br> 
+
+	{% for city in path %}
+
+		<button type="button" class="btn btn-primary btn-lg" style="font-size: 12pt; height: 40px; width:280px; ">
+					{{ city }} 
+		</button>
+		<br>
+		<img src="https://cdn0.iconfinder.com/data/icons/controls-and-navigation-arrows-1/24/25-512.png" style="font-size: 12pt; height: 40px; width:40px; ">
+		<br>
+	{% endfor %}
+{% endif %}
+
+
+</div>
+
+
+{% endblock %}
+
+
