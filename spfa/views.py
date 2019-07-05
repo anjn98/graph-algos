@@ -60,8 +60,9 @@ def sp_output_view(request,*args,**kwargs):
 	for i in range(len_inp):
 		system[i]=system[i].upper()
 
-	startp=startp.upper()
-	endp=endp.upper()
+	startp=startp.upper().strip()
+	endp=endp.upper().strip()
+	
 
 	context['startp']=startp
 	context['endp']=endp
@@ -99,13 +100,6 @@ def sp_output_view(request,*args,**kwargs):
 		context['found']=0
 		return render(request,"sp_output.html",context)			
 		
-
-	
-		
-
-	print(place_id)
-	print(startp)
-	print(place_id[startp])
 
 	#-------------------------------------------------------------
 
